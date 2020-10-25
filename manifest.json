@@ -16,7 +16,7 @@
       "scripts": ["background.js"],
       "persistent":false
     },
-  "permissions": ["activeTab","tabs"],
+  "permissions": ["tabs"],
   "web_accessible_resources": [
     "src/timer_styling.css",
     "fonts/Roboto-Regular.ttf"
