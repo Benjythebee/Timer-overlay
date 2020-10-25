@@ -5,6 +5,7 @@ A simple timer overlay chrome extension that activates on keypress.
 This extension is a useful tool if you want to obtain timing measurements for website that let's you do a task using a single key.
 
 For example, in Cryptovoxels:
+
 ![octopus](/web/page_content/example_timer.gif?raw=true "Example_timer")
 
 # FAQ:
