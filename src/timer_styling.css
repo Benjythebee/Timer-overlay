@@ -1,0 +1,44 @@
+.timer-overlay button{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+
+    color: #fff;
+    background-color: #295FDB;
+    border-color: #2454c4;
+    
+}
+
+@font-face {
+    font-family: ‘Roboto-google’;
+    font-style: normal;
+    font-weight: 700;
+    src: url(‘chrome-extension://__MSG_@@extension_id__/fonts/Roboto-Regular.ttf’); 
+}
+
+.timer-overlay{
+    position: fixed;
+    font-family: "Roboto-google";
+    font-weight: 700;
+    border: 1px solid rgb(211, 211, 211);
+    text-align: center;
+    bottom: 25px;
+    right: 25px;
+    width: 200px;
+    height: 70px;
+    background-color: white;
+    z-index: 900;
+    
+}

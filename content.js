@@ -5,15 +5,15 @@ function CreateDiv(position){
 
     var div = document.createElement("div");
     div.className='timer-overlay'
-    div.style.position="fixed"
-    div.style.border= "1px solid #d3d3d3";
-    div.style.textAlign="center"
-    div.style.bottom="25px"
-    div.style.right="25px"
-    div.style.width = "200px";
-    div.style.height = "70px";
-    div.style.backgroundColor="white"
-    div.style.zIndex = "900"
+    // div.style.position="fixed"
+    // div.style.border= "1px solid #d3d3d3";
+    // div.style.textAlign="center"
+    // div.style.bottom="25px"
+    // div.style.right="25px"
+    // div.style.width = "200px";
+    // div.style.height = "70px";
+    // div.style.backgroundColor="white"
+    // div.style.zIndex = "900"
 
     if(position){
         div.style.top=position.top

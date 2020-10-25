@@ -17,6 +17,10 @@
       "persistent":false
     },
   "permissions": ["activeTab","tabs"],
+  "web_accessible_resources": [
+    "src/timer_styling.css",
+    "fonts/Roboto-Regular.ttf"
+],
   "content_scripts": [
       {
         "matches": ["<all_urls>"],
