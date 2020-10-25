@@ -7,21 +7,22 @@
 }
 
 .timer-overlay-extension{
+    font-family: "Roboto-google" !important;
     position: fixed;
     border: 1px solid rgb(211, 211, 211);
     text-align: center;
     bottom: 25px;
     right: 25px;
-    width: 200px;
+    width: 15%;
     height: 70px;
     background-color: white;
     z-index: 2002;
+    font-size:18px
 }
 
 .timer-overlay-extension h1{
-    font-family: "Roboto-google" !important;
     font-weight: 700  !important;
-    font-size: x-large !important;
+    font-size: 2em !important;
 
         
 }
