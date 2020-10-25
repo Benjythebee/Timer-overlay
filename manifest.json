@@ -1,32 +1,34 @@
 {
-    "name": "Timer overlay",
-    "version": "1.0",
-    "description": "This is a timer overlay that starts as soon as a specific key is pressed. The timer stops only when that key is released.",
-    "browser_action": {
-        "default_title": "Timer overlay",
-        "default_popup": "popup.html"
-      },
-      "background": {
-        "scripts": ["background.js"]
-      },
-    "permissions": ["activeTab","tabs"],
-    "content_scripts": [
-        {
-          "matches": ["<all_urls>"],
-          "js": ["content.js"]
+  "name": "Timer overlay",
+  "version": "1.0",
+  "description": "This is a timer overlay that starts as soon as a specific key is pressed. The timer stops only when that key is released.",
+  "browser_action": {
+      "default_title": "Timer overlay",
+      "default_popup": "popup.html",
+      "default_icons": {
+          "16": "src/icon16.png",
+          "32": "src/icon32.png",
+          "48": "src/icon48.png",
+          "128": "src/icon128.png"
         }
-      ],
-    "manifest_version": 2,
-    "default_icon": {
-        "16": "src/icon16.png",
-        "32": "src/icon32.png",
-        "48": "src/icon48.png",
-        "128": "src/icon128.png"
-      },
-      "icons": {
-        "16":  "src/icon16.png",
-        "32": "src/icon32.png",
-        "48": "src/icon48.png",
-        "128": "src/icon128.png"
+    },
+    "background": {
+      "scripts": ["background.js"],
+      "persistent":false
+    },
+  "permissions": ["activeTab","tabs"],
+  "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
       }
-  }
+    ],
+  "manifest_version": 2,
+
+    "icons": {
+      "16":  "src/icon16.png",
+      "32": "src/icon32.png",
+      "48": "src/icon48.png",
+      "128": "src/icon128.png"
+    }
+}
