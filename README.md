@@ -1,4 +1,4 @@
-# Timer overlay chrome extension
+<div align="center">![octopus](/web/page_content/Github_social_preivew.png?raw=true "Example_timer")</div>
 version 1.0
 
 A simple timer overlay chrome extension that activates on keypress.
