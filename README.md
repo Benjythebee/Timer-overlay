@@ -1,4 +1,5 @@
 <div align="center"> <a href="https://github.com/Benjythebee/Timer-overlay/"><img src="./web/page_content/Github_social_preivew.png?raw=true" width="95%"></a></div>
+
 **Version 1.0**
 
 A simple timer overlay chrome extension that activates on keypress.
