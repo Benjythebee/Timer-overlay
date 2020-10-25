@@ -19,6 +19,6 @@ No it will not.
 
 
 # To-dos
-[ ] Manage combination of keys (eg: Ctrl+E)
-[ ] Account for scrollable pages
-[ ] Better CSS
+- [ ] Manage combination of keys (eg: Ctrl+E)
+- [ ] Account for scrollable pages
+- [ ] Better CSS
