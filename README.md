@@ -1,5 +1,5 @@
-<div align="center"> <img src="./web/page_content/Github_social_preivew.png?raw=true" width="95%"></div>
-version 1.0
+<div align="center"> <a href="https://github.com/Benjythebee/Timer-overlay/"><img src="./web/page_content/Github_social_preivew.png?raw=true" width="95%"></a></div>
+**Version 1.0**
 
 A simple timer overlay chrome extension that activates on keypress.
 This extension is a useful tool if you want to obtain timing measurements for website that let's you do a task using a single key.
