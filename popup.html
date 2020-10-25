@@ -3,20 +3,63 @@
   <head>
     <style>
         html,body{
+          
             min-width: fit-content;
             min-height: fit-content;
         };
-      button {
-        height: 30px;
-        width: 30px;
-        outline: none;
+        .body-timer-extension-popup-class button{
+          display: inline-block;
+          margin-bottom: 0;
+          font-weight: 400;
+          text-align: center;
+          white-space: nowrap;
+          vertical-align: middle;
+          -ms-touch-action: manipulation;
+          touch-action: manipulation;
+          cursor: pointer;
+          background-image: none;
+          border: 1px solid transparent;
+          padding: 1px 1px;
+          font-size: 14px;
+          line-height: 1.42857143;
+          border-radius: 4px;
+          
       }
+
+        #spawn{
+          color: #fff;
+          background-color: #295FDB;
+          border-color: #2454c4;
+        }
+
+
+        .container{
+          width: 100px;
+          margin: 5%;
+          text-align: center;
+
+        }
+        .setKeyClass{
+          display: flex;
+          margin: 5%;
+        }
+        .setKeyClass button{
+          margin-left: 4px;
+          color: rgb(0, 0, 0);
+          background-color: #8d8d8d;
+          border-color: #39393a;
+        }
+        
     </style>
   </head>
-  <body>
-      Set key:
-    <button id="key">W</button>
-    <button id="spawn">Make timer</button>
+  <body class="body-timer-extension-popup-class">
+    <div class="container">
+      <div class="setKeyClass">
+        <p>Set key: </p>
+        <button id="key">W</button>
+      </div>
+      <button id="spawn">Make timer</button>
+    </div>
   </body>
   <script src="popup.js"></script>
 </html>

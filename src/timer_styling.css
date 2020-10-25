@@ -1,7 +1,35 @@
-.timer-overlay button{
+
+@font-face {
+    font-family: ‘Roboto-google’;
+    font-style: normal;
+    font-weight: 700;
+    src: url(‘chrome-extension://__MSG_@@extension_id__/fonts/Roboto-Regular.ttf’); 
+}
+
+.timer-overlay-extension{
+    position: fixed;
+    border: 1px solid rgb(211, 211, 211);
+    text-align: center;
+    bottom: 25px;
+    right: 25px;
+    width: 200px;
+    height: 70px;
+    background-color: white;
+    z-index: 2002;
+}
+
+.timer-overlay-extension h1{
+    font-family: "Roboto-google" !important;
+    font-weight: 700  !important;
+    font-size: x-large !important;
+
+        
+}
+
+.timer-overlay-extension #RestartButton_timer_extension{
     display: inline-block;
     margin-bottom: 0;
-    font-weight: 400;
+    font-weight: 700;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -10,7 +38,7 @@
     cursor: pointer;
     background-image: none;
     border: 1px solid transparent;
-    padding: 6px 12px;
+    padding: 1px 1px;
     font-size: 14px;
     line-height: 1.42857143;
     border-radius: 4px;
@@ -21,24 +49,3 @@
     
 }
 
-@font-face {
-    font-family: ‘Roboto-google’;
-    font-style: normal;
-    font-weight: 700;
-    src: url(‘chrome-extension://__MSG_@@extension_id__/fonts/Roboto-Regular.ttf’); 
-}
-
-.timer-overlay{
-    position: fixed;
-    font-family: "Roboto-google";
-    font-weight: 700;
-    border: 1px solid rgb(211, 211, 211);
-    text-align: center;
-    bottom: 25px;
-    right: 25px;
-    width: 200px;
-    height: 70px;
-    background-color: white;
-    z-index: 900;
-    
-}

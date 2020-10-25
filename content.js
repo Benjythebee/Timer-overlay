@@ -4,7 +4,7 @@ var keyStartTimer;
 function CreateDiv(position){
 
     var div = document.createElement("div");
-    div.className='timer-overlay'
+    div.className='timer-overlay-extension'
     // div.style.position="fixed"
     // div.style.border= "1px solid #d3d3d3";
     // div.style.textAlign="center"
@@ -20,12 +20,12 @@ function CreateDiv(position){
         div.style.left=position.left
     }
     //div.style.fontSize ="px"
-    div.innerHTML = "<h1 style='padding-top:auto;margin-top:1%;margin-bottom:auto'>00:00:00</h1>";
+    div.innerHTML = "<h1 style='margin-top:1%;margin-bottom:auto'>00:00:00</h1>";
     document.body.appendChild(div);
-    dragElement(document.body.querySelector('.timer-overlay'));
+    dragElement(document.body.querySelector('.timer-overlay-extension'));
 }
 function RemoveDiv(){
-    document.body.querySelector('.timer-overlay').remove()
+    document.body.querySelector('.timer-overlay-extension').remove()
 }
 
 
@@ -103,12 +103,12 @@ chrome.runtime.onMessage.addListener(
 
     function startTimer(){
        timePassed = new Date() - timeStart
-       document.body.querySelector('.timer-overlay').querySelector('h1').innerHTML=showTime(timePassed)
+       document.body.querySelector('.timer-overlay-extension').querySelector('h1').innerHTML=showTime(timePassed)
        timeoutLoop=setTimeout("startTimer()",1)
     }
 
     function restartTimer(){
-        var element =document.body.querySelector('.timer-overlay')
+        var element =document.body.querySelector('.timer-overlay-extension')
         var position ={top:element.style.top,left:element.style.left}
         RemoveDiv()
         CreateDiv(position)
@@ -119,9 +119,9 @@ chrome.runtime.onMessage.addListener(
         clearTimeout(timeoutLoop)
         var restartButton = document.createElement('button')
         restartButton.innerText="Restart"
-        restartButton.id="restartButton"
-        document.body.querySelector('.timer-overlay').appendChild(restartButton)
-        document.body.querySelector('#restartButton').addEventListener('click', (e)=>{
+        restartButton.id="RestartButton_timer_extension"
+        document.body.querySelector('.timer-overlay-extension').appendChild(restartButton)
+        document.body.querySelector('#RestartButton_timer_extension').addEventListener('click', (e)=>{
             restartTimer()
             
         },{once:true})
@@ -135,10 +135,12 @@ chrome.runtime.onMessage.addListener(
             }
         },{once:true})
         document.body.addEventListener('keyup', function(event) {
+            console.log(event.key)
             if(event.key==keyStartTimer){
                 stopTimer()
+                document.body.removeEventListener('keyup', arguments.callee);
             }
-        },{once:true})
+        })
     }
 
     function showTime(time){
@@ -149,8 +151,8 @@ chrome.runtime.onMessage.addListener(
 
         if (minutes<=9){minutes="0"+minutes}
         if (seconds<=9){seconds="0"+seconds}
-        if (milliseconds<=9){milliseconds="00"+milliseconds}
-        if (milliseconds<=99){milliseconds="0"+milliseconds}
+        if (milliseconds<=9){milliseconds="0"+milliseconds}
+        //if (milliseconds<=99){milliseconds="0"+milliseconds}
         
         return minutes+":"+seconds+":"+milliseconds
         

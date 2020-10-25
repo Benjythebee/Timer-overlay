@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function listenKey () {
         console.log("Listening to key")
+        document.querySelector('#key').textContent= "..."
         document.body.addEventListener('keyup', function(event) {
-            console.log(event.key);
-            console.log(event.code);
+            bg.console.log(event.key);
             document.querySelector('#key').textContent= event.key.toUpperCase()
             keyCode= event.key
           },{once:true});
