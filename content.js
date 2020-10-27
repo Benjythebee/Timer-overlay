@@ -31,7 +31,7 @@ function RemoveDiv(){
 
 
 function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0,scrolll=0,addScroll=0;
   
     // otherwise, move the DIV from anywhere inside the DIV:
     elmnt.onmousedown = dragMouseDown;
@@ -44,6 +44,10 @@ function dragElement(elmnt) {
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
+    console.log("ycursor:",pos4)
+    console.log(scrolll)
+    console.log(addScroll)
+    elmnt.style.position="absolute"
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
@@ -52,33 +56,45 @@ function dragElement(elmnt) {
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
-    elmnt.style.left=elmnt.offsetLeft
-    elmnt.style.top=elmnt.offsetTop
-
+    
+    //elmnt.style.left=elmnt.offsetLeft
+    //elmnt.style.top=elmnt.offsetTop
+    //document.body.style.overflow="auto"
+    
+    addScroll=window.scrollY==scrolll? 0:parseInt(window.scrollY) 
+    scrolll=window.scrollY
     // calculate the new cursor position:
+    
     pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
+    pos2 = pos4 - e.clientY;//+ window.scrollY;
     // calculate the max cursor position:
     var xMax = window.innerWidth - elmnt.offsetWidth;
-    var yMax = window.innerHeight - elmnt.offsetHeight;
+    var yMax = window.innerHeight - elmnt.offsetHeight ;
 
     // set the element's new position:
-    elmnt.style.position="absolute"
+
     if ((elmnt.offsetLeft - pos1) >= 0 && (elmnt.offsetLeft - pos1) <= xMax) {
         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         pos3 = e.clientX;
       }
-      if ((elmnt.offsetTop - pos2) >= 0 && (elmnt.offsetTop - pos2) <= yMax) {
-        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      if ((elmnt.offsetTop - pos2) >= (0+ window.scrollY) && (elmnt.offsetTop - pos2) <= (yMax + window.scrollY)) {
+        elmnt.style.top =  (parseInt(elmnt.offsetTop) - pos2 )+"px"//(parseInt(e.clientY) - pos2 )+"px" //(elmnt.offsetTop - pos2 ) + "px";
+
         pos4 = e.clientY;
       }
+
     }
 
   function closeDragElement() {
     // stop moving when mouse button is released:
-    elmnt.style.position="fixed"
+    
     document.onmouseup = null;
     document.onmousemove = null;
+    console.log("End ycursor:",pos4)
+    //elmnt.style.top =
+    console.log(elmnt.style.top)//+ parseInt(window.scrollY)
+    elmnt.style.position="fixed"
+    //document.body.style.overflow="visible"
   }
 }
 

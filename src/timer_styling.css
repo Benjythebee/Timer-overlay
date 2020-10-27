@@ -17,7 +17,8 @@
     height: 70px;
     background-color: white;
     z-index: 2002;
-    font-size:18px
+    font-size:18px;
+    cursor: move;
 }
 
 .timer-overlay-extension h1{
